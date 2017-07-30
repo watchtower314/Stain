@@ -1,0 +1,206 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context="watchtower.stain.GraphTwo"
+    android:id="@+id/graph2layout"
+    >
+
+    <ImageView
+        android:id="@+id/titleGraph2"
+        android:layout_width="700dp"
+        android:layout_height="80dp"
+        android:background="@drawable/t22"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" ></ImageView>
+
+
+    <!-- bars layout-->
+    <LinearLayout
+        android:id="@+id/graphLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="450dp">
+
+        <ImageView
+            android:id="@+id/teacherBar1"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:background="@color/bars"
+            android:layout_gravity="center|bottom"
+            android:layout_above="@+id/teacherTextG"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"/>
+
+        <ImageView
+            android:id="@+id/parentBar1"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:background="@color/bars"
+            android:layout_gravity="center|bottom"
+            android:layout_above="@+id/parentTextG"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"/>
+
+        <ImageView
+            android:id="@+id/friendsBar1"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:background="@color/bars"
+            android:layout_gravity="center|bottom"
+            android:layout_above="@+id/friendsTextG"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"/>
+
+        <ImageView
+            android:id="@+id/otherBar1"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:background="@color/bars"
+            android:layout_gravity="center|bottom"
+            android:layout_above="@+id/otherTextG"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"/>
+    </LinearLayout>
+
+    <!-- underline -->
+    <ImageView
+        android:id="@+id/underline2"
+        android:layout_width="800dp"
+        android:layout_height="2dp"
+        android:background="@drawable/underline"
+        android:layout_alignBottom="@+id/graphLayout2"
+        android:layout_centerHorizontal="true" />
+
+    <!-- names layout-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/underline2"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/teacherTextG"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center|bottom"
+            android:background="@drawable/teachertxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="20dp"
+            />
+
+        <ImageView
+            android:id="@+id/parentTextG"
+            android:layout_width="80dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center|bottom"
+            android:background="@drawable/parentstxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="20dp"/>
+
+        <ImageView
+            android:id="@+id/friendsTextG"
+            android:layout_width="90dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center|bottom"
+            android:background="@drawable/friendstxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="20dp"/>
+
+        <ImageView
+            android:id="@+id/otherTextG"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="@drawable/othertxt"
+            android:layout_gravity="center|bottom"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="20dp"></ImageView>
+
+    </LinearLayout>
+
+    <!-- credits-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="3dp"
+        >
+
+        <TextView
+            android:id="@+id/credit22"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textSize="16dp"
+            android:gravity="center_vertical"
+            android:text="@string/credits"
+            android:layout_marginLeft="3dp"
+            />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@mipmap/watchtower"
+            android:layout_gravity="center_vertical"
+            ></ImageView>
+    </LinearLayout>
+
+    <!-- back and next-->
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:onClick="nextQuestion"
+        android:layout_alignParentLeft="true"
+        >
+
+        <ImageButton
+            android:id="@+id/nextQuestion1"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:onClick="nextQuestion"
+            android:layout_centerInParent="true"
+            android:background="@drawable/back"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:onClick="backQuestion"
+        android:layout_alignParentRight="true"
+        >
+        <ImageButton
+            android:id="@+id/backQuestion1"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:onClick="backQuestion"
+            android:background="@drawable/next"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

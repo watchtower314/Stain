@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Stain</string>
+
+    <string name="title_activity_question_one">QuestionOne</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_question_two">QuestionTwo</string>
+
+    <string name="title_activity_question_three">QuestionThree</string>
+
+    <string name="title_activity_graph_one">GraphOne</string>
+
+    <string name="title_activity_graph_three">GraphThree</string>
+
+    <string name="title_activity_graph_two">GraphTwo</string>
+
+    <string name="credits"> Created by watchtower </string>
+</resources>

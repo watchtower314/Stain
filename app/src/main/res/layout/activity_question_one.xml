@@ -1,0 +1,183 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
+    tools:context="watchtower.stain.QuestionOne"
+    android:id="@+id/q1layout">
+
+
+
+
+
+
+    <ImageView
+        android:id="@+id/titleQ1"
+        android:layout_width="700dp"
+        android:layout_height="50dp"
+        android:background="@drawable/t1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+
+
+
+        <TableLayout
+            android:id="@+id/outer_tableQ1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:stretchColumns="0,1,2"
+            android:layout_marginTop="150dp">
+
+            <TableRow>
+
+
+                <!-- ******************************** RONI **************************-->
+
+                <GridLayout
+            android:id="@+id/roniGridQ"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="1"
+            android:rowCount="2"
+            android:layout_gravity="center">
+
+
+            <ImageView
+                android:id="@+id/roniName"
+                android:layout_width="70dp"
+                android:layout_height="55dp"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/r1"
+                android:onClick="chooseCharacter"
+                />
+
+            <ImageButton
+                android:id="@+id/roni"
+                android:layout_width="150dp"
+                android:layout_height="300dp"
+                android:layout_column="0"
+                android:layout_gravity="center"
+                android:layout_row="0"
+                android:background="@drawable/roni1"
+                android:onClick="chooseCharacter"></ImageButton>
+
+
+        </GridLayout>
+
+                <!-- ******************************** TOM **************************-->
+
+                <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="1"
+            android:rowCount="2"
+            android:layout_gravity="center"
+            android:id="@+id/tomGridQ">
+
+            <ImageView
+                android:id="@+id/tomName"
+                android:layout_width="70dp"
+                android:layout_height="55dp"
+                android:layout_column="0"
+                android:layout_row="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/t11"
+                android:onClick="chooseCharacter"/>
+
+            <ImageButton
+                android:id="@+id/tom"
+                android:layout_width="150dp"
+                android:layout_height="300dp"
+                android:background="@drawable/tom1"
+                android:onClick="chooseCharacter"
+                android:layout_gravity="center"
+                android:layout_column="0"
+                android:layout_row="0"></ImageButton>
+
+
+
+        </GridLayout>
+
+                <!-- ******************************** SEAN **************************-->
+
+                <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="1"
+            android:rowCount="2"
+            android:layout_gravity="center"
+            android:id="@+id/seanGridQ">
+
+            <ImageView
+                android:id="@+id/seanName"
+                android:layout_width="70dp"
+                android:layout_height="55dp"
+                android:layout_column="0"
+                android:layout_gravity="center"
+                android:layout_marginTop="22dp"
+                android:layout_row="1"
+                android:background="@drawable/s1"
+                android:onClick="chooseCharacter"></ImageView>
+
+
+
+            <ImageButton
+                android:id="@+id/sean"
+                android:layout_width="150dp"
+                android:layout_height="300dp"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_gravity="center"
+                android:background="@drawable/sean1"
+                android:onClick="chooseCharacter"></ImageButton>
+
+
+        </GridLayout>
+
+
+
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
+        <!-- credits -->
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="3dp"
+        >
+
+        <TextView
+            android:id="@+id/credit11"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:textSize="16dp"
+            android:gravity="center_vertical"
+            android:text="@string/credits"
+            android:layout_marginLeft="3dp"
+            />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@mipmap/watchtower"
+            android:layout_gravity="center_vertical"
+
+            ></ImageView>
+    </LinearLayout>
+
+</RelativeLayout>
