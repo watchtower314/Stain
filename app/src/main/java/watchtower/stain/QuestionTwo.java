@@ -12,8 +12,9 @@ public class QuestionTwo extends Activity {
     public static final String FRIENDS2 = "friends2";
     public static final String PARENTS2 = "parents2";
     public static final String TEACHER2 = "teacher2";
+    public static final String OVER_ALL2 = "overall2";
 
-    public int currOther2, currFriends2, currParents2, currTeacher2;
+    public int currOther2, currFriends2, currParents2, currTeacher2, currOverAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class QuestionTwo extends Activity {
         currFriends2 = Questionairre.graphPrefs.getInt(FRIENDS2, 0);
         currParents2 = Questionairre.graphPrefs.getInt(PARENTS2, 0);
         currTeacher2 = Questionairre.graphPrefs.getInt(TEACHER2, 0);
-
+        currOverAll = Questionairre.graphPrefs.getInt(OVER_ALL2, 0);
 
     }
 
@@ -36,23 +37,23 @@ public class QuestionTwo extends Activity {
         if(id == R.id.other || id == R.id.otherName)
         {
             Log.d("TKT" ," IN TEACHER");
-            Questionairre.updateSharedPref(OTHER2, currOther2+2);
+            Questionairre.updateSharedPref(OTHER2, currOther2+2, OVER_ALL2, ++currOverAll);
         }
         else
         if(id == R.id.friends || id == R.id.friendsName)
         {
             Log.d("TKT" ," IN TEACHER");
-            Questionairre.updateSharedPref(FRIENDS2, currFriends2+2);
+            Questionairre.updateSharedPref(FRIENDS2, currFriends2+2, OVER_ALL2, ++currOverAll);
         }
         else
             if(id == R.id.parents || id == R.id.parentsName) {
                 Log.d("TKT" ," IN TEACHER");
-                Questionairre.updateSharedPref(PARENTS2, currParents2+2);
+                Questionairre.updateSharedPref(PARENTS2, currParents2+2, OVER_ALL2, ++currOverAll);
             }
             else
             {
                 Log.d("TKT" ," IN TEACHER");
-                Questionairre.updateSharedPref(TEACHER2, currTeacher2+2);
+                Questionairre.updateSharedPref(TEACHER2, currTeacher2+2, OVER_ALL2, ++currOverAll);
             }
 
 

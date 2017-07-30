@@ -24,10 +24,10 @@
     <LinearLayout
         android:id="@+id/graphLayout3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp">
+        android:layout_centerVertical="true">
 
         <ImageView
             android:id="@+id/roniBar3"
@@ -78,7 +78,8 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/underline3"
         android:layout_centerHorizontal="true"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="30dp">
 
         <ImageView
             android:id="@+id/roniTextG3"
@@ -118,6 +119,7 @@
             android:layout_marginRight="100dp"></ImageView>
 
     </LinearLayout>
+
     <!-- credits -->
     <LinearLayout
         android:layout_width="wrap_content"

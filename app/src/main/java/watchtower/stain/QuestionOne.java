@@ -17,7 +17,8 @@ public class QuestionOne extends Activity {
     public static final String SEAN1 = "sean1";
     public static final String TOM1 = "tom1";
     public static  final String RONI1 = "roni1";
-    public int currSean1, currTom1, currRoni1;
+    public static final String OVER_ALL1 = "overall1";
+    public int currSean1, currTom1, currRoni1, currOverAll;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class QuestionOne extends Activity {
         currSean1 = Questionairre.graphPrefs.getInt(SEAN1, 0);
         currTom1 = Questionairre.graphPrefs.getInt(TOM1, 0);
         currRoni1 = Questionairre.graphPrefs.getInt(RONI1, 0);
+        currOverAll = Questionairre.graphPrefs.getInt(OVER_ALL1, 0);
 
 
     }
@@ -40,20 +42,20 @@ public class QuestionOne extends Activity {
         if(v.getId() == R.id.sean || v.getId() == R.id.seanName)
         {
             Log.d("ChooseChar","sean: "+currSean1 );
-            Questionairre.updateSharedPref(SEAN1, currSean1+2);
+            Questionairre.updateSharedPref(SEAN1, currSean1+2, OVER_ALL1, ++currOverAll);
 
         }
         else
             if(id == R.id.tom || id == R.id.tomName)
             {
                 Log.d("ChooseChar","tom: "+currTom1 );
-                Questionairre.updateSharedPref(TOM1, currTom1+2);
+                Questionairre.updateSharedPref(TOM1, currTom1+2, OVER_ALL1, ++currOverAll);
                 System.out.println("tom increment");
             }
             else
             {
                 Log.d("ChooseChar","roni: "+currRoni1 );
-                Questionairre.updateSharedPref(RONI1, ++currRoni1+2);
+                Questionairre.updateSharedPref(RONI1, currRoni1+2, OVER_ALL1, ++currOverAll);
                 System.out.println("roni increment");
             }
 

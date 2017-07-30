@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 public class GraphThree extends Activity {
 
-    public int currSean3, currTom3, currRoni3;
+    public int currSean3, currTom3, currRoni3, currOverAll3;
     ImageView seanBar3, tomBar3, roniBar3;
 
     @Override
@@ -21,6 +21,7 @@ public class GraphThree extends Activity {
         currSean3 = Questionairre.graphPrefs.getInt(QuestionThree.SEAN3, 0);
         currTom3 = Questionairre.graphPrefs.getInt(QuestionThree.TOM3, 0);
         currRoni3 = Questionairre.graphPrefs.getInt(QuestionThree.RONI3, 0);
+        currOverAll3 = Questionairre.graphPrefs.getInt(QuestionThree.OVER_ALL3, 0);
 
         seanBar3 = (ImageView)findViewById(R.id.seanBar3);
         tomBar3 = (ImageView)findViewById(R.id.tomBar3);
@@ -31,7 +32,37 @@ public class GraphThree extends Activity {
     public void updateBarEntries()
     {
 
+        double temp;
+        Log.d("overall: ", ""+currOverAll3);
 
+        Log.d("tomBar: ", ""+currTom3);
+        Log.d("roniBar: ", ""+currRoni3);
+
+        if(currSean3!=0) {
+            temp = (currSean3 * 100) / currOverAll3;
+            seanBar3.getLayoutParams().height = (int) temp + 300;//((currSean1%currOverAll)*10)%100;
+            Log.d("seanBar: ", "" + temp);
+        }
+        else
+            seanBar3.getLayoutParams().height = 0;
+
+        if(currTom3!=0) {
+            temp = (currTom3 * 100) / currOverAll3;
+            tomBar3.getLayoutParams().height = (int) temp + 300;//((currTom1%currOverAll)*100)%100;
+            Log.d("tomBar: ", "" + temp);
+        }
+        else
+            tomBar3.getLayoutParams().height = 0;
+
+        if(currRoni3!=0) {
+            temp = (currRoni3 * 100) / currOverAll3;
+            roniBar3.getLayoutParams().height = (int) temp + 300;//((currRoni1%currOverAll)*100)%100;
+            Log.d("roniBar: ", "" + temp);
+        }
+        else
+            roniBar3.getLayoutParams().height = 0;
+
+        /*
         if(currSean3<= Questionairre.maxHeight)
             seanBar3.getLayoutParams().height = currSean3;
         else
@@ -49,6 +80,7 @@ public class GraphThree extends Activity {
         else
             tomBar3.getLayoutParams().height = Questionairre.maxHeight;
         roniBar3.requestLayout();
+        */
 
     }
 

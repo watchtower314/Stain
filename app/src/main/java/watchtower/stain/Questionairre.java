@@ -8,15 +8,21 @@ import android.content.SharedPreferences;
 
 public class Questionairre {
     public static final String QUESTION_GRAPH = "Graphs";
+
+
+
     public static SharedPreferences graphPrefs;
     public static SharedPreferences.Editor graphEdit;
     public static final int maxHeight = 550;
 
-    public static void updateSharedPref(String nameNQ, int num)
+    public static void updateSharedPref(String nameNQ, int num, String currOverAllStr, int currOverAllNum)
     {
         graphEdit = graphPrefs.edit();
         graphEdit.putInt(nameNQ,num);
+        graphEdit.putInt(currOverAllStr, currOverAllNum);
         graphEdit.commit();
+
     }
+
 
 }

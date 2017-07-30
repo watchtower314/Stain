@@ -24,10 +24,10 @@
     <LinearLayout
         android:id="@+id/graphLayout1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp">
+        android:layout_centerVertical="true">
 
 
         <ImageView
@@ -83,6 +83,8 @@
         android:layout_alignTop="@+id/underline1"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
+        android:layout_marginBottom="30dp"
+
         >
 
         <ImageView
@@ -130,6 +132,7 @@
 
     <!-- credits -->
     <LinearLayout
+        android:id="@+id/creditLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

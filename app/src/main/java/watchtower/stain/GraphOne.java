@@ -14,7 +14,7 @@ import android.widget.ImageView;
 public class GraphOne extends Activity {
 
 
-    public int currSean1, currTom1, currRoni1;
+    public int currSean1, currTom1, currRoni1, currOverAll;
     ImageView seanBar, tomBar, roniBar;
 
     @Override
@@ -27,6 +27,7 @@ public class GraphOne extends Activity {
         currSean1 = Questionairre.graphPrefs.getInt(QuestionOne.SEAN1, 0);
         currTom1 = Questionairre.graphPrefs.getInt(QuestionOne.TOM1, 0);
         currRoni1 = Questionairre.graphPrefs.getInt(QuestionOne.RONI1, 0);
+        currOverAll = Questionairre.graphPrefs.getInt(QuestionOne.OVER_ALL1, 0);
 
         seanBar = (ImageView)findViewById(R.id.seanBar1);
         tomBar = (ImageView)findViewById(R.id.tomBar1);
@@ -37,7 +38,36 @@ public class GraphOne extends Activity {
 
     public void updateBarEntries()
     {
+        double temp;
+        Log.d("overall: ", ""+currOverAll);
+        Log.d("tomBar: ", ""+currTom1);
+        Log.d("roniBar: ", ""+currRoni1);
 
+        if(currSean1!=0) {
+            temp = (currSean1 * 100) / currOverAll;
+            seanBar.getLayoutParams().height = (int) temp + 300;//((currSean1%currOverAll)*10)%100;
+            Log.d("seanBar: ", "" + temp);
+        }
+        else
+            seanBar.getLayoutParams().height = 0;
+
+        if(currTom1!=0) {
+            temp = (currTom1 * 100) / currOverAll;
+            tomBar.getLayoutParams().height = (int) temp + 300;//((currTom1%currOverAll)*100)%100;
+            Log.d("tomBar: ", "" + temp);
+        }
+        else
+            tomBar.getLayoutParams().height = 0;
+
+        if(currRoni1!=0) {
+            temp = (currRoni1 * 100) / currOverAll;
+            roniBar.getLayoutParams().height = (int) temp + 300;//((currRoni1%currOverAll)*100)%100;
+            Log.d("roniBar: ", "" + temp);
+        }
+        else
+            roniBar.getLayoutParams().height = 0;
+
+        /*
         Log.d("UpdateBarEmtries","sean: "+currSean1 );
         if(currSean1 <= Questionairre.maxHeight)
             seanBar.getLayoutParams().height = currSean1;
@@ -56,6 +86,8 @@ public class GraphOne extends Activity {
         else
             tomBar.getLayoutParams().height = Questionairre.maxHeight;
         roniBar.requestLayout();
+
+        */
 
     }
 

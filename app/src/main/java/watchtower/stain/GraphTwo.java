@@ -14,7 +14,7 @@ import android.widget.ImageView;
 public class GraphTwo extends Activity {
 
 
-    public int currTeacher2, currParents2, currFriends2, currOther2;
+    public int currTeacher2, currParents2, currFriends2, currOther2, currOverAll2;
 
     ImageView teachersBar, parentsBar, friendsBar, otherBar;
     @Override
@@ -27,6 +27,7 @@ public class GraphTwo extends Activity {
         currParents2 = Questionairre.graphPrefs.getInt(QuestionTwo.PARENTS2, 0);
         currFriends2 = Questionairre.graphPrefs.getInt(QuestionTwo.FRIENDS2, 0);
         currOther2 = Questionairre.graphPrefs.getInt(QuestionTwo.OTHER2, 0);
+        currOverAll2 = Questionairre.graphPrefs.getInt(QuestionTwo.OVER_ALL2, 0);
 
 
         teachersBar = (ImageView)findViewById(R.id.teacherBar1);
@@ -41,8 +42,44 @@ public class GraphTwo extends Activity {
 
     public void updateBarEntries()
     {
+        double temp;
+        Log.d("overall2: ", ""+currOverAll2);
+
+        if(currTeacher2!=0) {
+            temp = (currTeacher2 * 100) / currOverAll2;
+            teachersBar.getLayoutParams().height = (int) temp + 2000;//((currSean1%currOverAll)*10)%100;
+            Log.d("seanBar: ", "" + temp);
+        }
+        else
+            teachersBar.getLayoutParams().height = 0;
 
 
+        if(currParents2!=0) {
+            temp = (currParents2 * 100) / currOverAll2;
+            parentsBar.getLayoutParams().height = (int) temp + 200;//((currTom1%currOverAll)*100)%100;
+            Log.d("tomBar: ", "" + temp);
+        }
+        else
+            parentsBar.getLayoutParams().height = 0;
+
+
+        if(currFriends2!=0) {
+            temp = (currFriends2 * 100) / currOverAll2;
+            friendsBar.getLayoutParams().height = (int) temp + 200;//((currRoni1%currOverAll)*100)%100;
+            Log.d("roniBar: ", "" + temp);
+        }
+        else
+            friendsBar.getLayoutParams().height = 0;
+
+        if(currOther2!=0) {
+            temp = (currOther2 * 100) / currOverAll2;
+            otherBar.getLayoutParams().height = (int) temp + 200;//((currRoni1%currOverAll)*100)%100;
+            Log.d("roniBar: ", "" + temp);
+        }
+        else
+            otherBar.getLayoutParams().height = 0;
+
+        /*
         if(currTeacher2 <= Questionairre.maxHeight)
             teachersBar.getLayoutParams().height = currTeacher2;
         else
@@ -70,6 +107,7 @@ public class GraphTwo extends Activity {
         else
             otherBar.getLayoutParams().height = Questionairre.maxHeight;
         otherBar.requestLayout();
+        */
 
     }
 
